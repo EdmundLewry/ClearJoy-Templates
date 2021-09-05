@@ -1,0 +1,70 @@
+:root {
+    --light-type-color: #fff;
+    --nav-background-color: blue;
+    --nav-highlight-color: blueviolet;
+
+    --nav-item-pad: 20px;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+ul,
+p {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav {
+    width: 500px;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+.nav-item {
+    background-color: var(--nav-background-color);
+    text-align: right;
+    margin: 50px 0;
+    padding: var(--nav-item-pad) 50px var(--nav-item-pad) 0;
+    clip-path: polygon(0 0, 94% 0%, 100% 100%, 0% 100%);
+    width: 40%;
+}
+
+.nav-item p {
+    color: var(--light-type-color);
+    font-weight: bolder;
+    
+    /*Shift across*/
+    /* transition: width 0.5s; */
+
+    /*Moving underline*/
+    background-image: linear-gradient(#fff, #fff), linear-gradient(#000, #000);
+    background-size: 25% 2px, 0 2px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s, background-position 2s;
+}
+
+/*Shift across hover effect*/
+/* .nav-item:hover {
+    background-color: var(--nav-highlight-color);
+    width: 45%;
+} */
+
+
+/*Moving underline
+https://nickymeuleman.netlify.app/blog/css-animated-wrapping-underline
+*/
+.nav-item:hover {
+    background-color: var(--nav-highlight-color);
+}
+
+.nav-item p:hover {
+    background-size: 0 2px, 100% 2px;
+}
